@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyBuddy</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- CSV parser -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <!-- Chart.js for analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Login / Register Container -->
+    <div id="auth-container">
+      <h1>StudyBuddy</h1>
+      <form id="auth-form">
+        <input type="email" id="email" placeholder="University Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit" id="auth-button">Login</button>
+        <p id="toggle-auth">Don't have an account? <a href="#" id="auth-switch">Register</a></p>
+      </form>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="main-container" class="hidden">
+      <nav>
+        <button data-view="planner">Planner</button>
+        <button data-view="tracker">Tracker</button>
+        <button data-view="analytics">Analytics</button>
+        <button id="logout">Logout</button>
+      </nav>
+      <section id="planner" class="view">
+        <h2>Planner</h2>
+        <!-- CSV import and task list -->
+        <input type="file" id="csv-input" accept=".csv">
+        <ul id="task-list"></ul>
+      </section>
+      <section id="tracker" class="view hidden">
+        <h2>Tracker</h2>
+        <ul id="today-tasks"></ul>
+      </section>
+      <section id="analytics" class="view hidden">
+        <h2>Analytics</h2>
+        <canvas id="time-chart" width="400" height="400"></canvas>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/firebase.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
