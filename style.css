@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+  }
+  #app { width: 100%; }
+  #auth-container, #main-container { max-width: 600px; margin: auto; padding: 20px; }
+  .hidden { display: none; }
+  nav { display: flex; justify-content: space-between; margin-bottom: 20px; }
+  nav button { padding: 8px; }
+  .view { display: block; }
+  .view.hidden { display: none; }
+  input[type="file"] { margin-bottom: 20px; }
+  input, button { width: 100%; padding: 10px; margin-bottom: 10px; }
+  #task-list li, #today-tasks li { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; }
+  
